@@ -167,9 +167,10 @@ if(NOT SWIFT_BUILT_STANDALONE)
     message(SEND_ERROR
       "Unable to determine clang resource headers target in unified build")
   endif()
-
+  message(STATUS, "Adding dep from symlink_clang_headers_static to clang_resource_headers")
   foreach(target
       symlink_clang_headers
+      symlink_clang_headers_static
       clang-builtin-headers
       clang-resource-dir-symlink
       clang-builtin-headers-in-clang-resource-dir)
